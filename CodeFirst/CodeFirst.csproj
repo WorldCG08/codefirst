@@ -69,6 +69,10 @@
         <Compile Include="Migrations\202108261345179_RenameTitleToNameInCoursesTable.Designer.cs">
           <DependentUpon>202108261345179_RenameTitleToNameInCoursesTable.cs</DependentUpon>
         </Compile>
+        <Compile Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs" />
+        <Compile Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.Designer.cs">
+          <DependentUpon>202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs</DependentUpon>
+        </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +96,9 @@
       </EmbeddedResource>
       <EmbeddedResource Include="Migrations\202108261345179_RenameTitleToNameInCoursesTable.resx">
         <DependentUpon>202108261345179_RenameTitleToNameInCoursesTable.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.resx">
+        <DependentUpon>202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
