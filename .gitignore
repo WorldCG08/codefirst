@@ -1,4 +1,4 @@
-aspapp/obj/*
-aspapp/bin/*
+CodeFirst/obj/*
+CodeFirst/bin/*
 .vs/*
 .idea/*
