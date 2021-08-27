@@ -48,9 +48,27 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Classification.cs" />
+        <Compile Include="Genre.cs" />
         <Compile Include="Migrations\202108270650572_InitialMigration.cs" />
         <Compile Include="Migrations\202108270650572_InitialMigration.Designer.cs">
           <DependentUpon>202108270650572_InitialMigration.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202108270907167_AddGenreTable.cs" />
+        <Compile Include="Migrations\202108270907167_AddGenreTable.Designer.cs">
+          <DependentUpon>202108270907167_AddGenreTable.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202108271128580_AddManyToManyBetweenGenreAndVideo.cs" />
+        <Compile Include="Migrations\202108271128580_AddManyToManyBetweenGenreAndVideo.Designer.cs">
+          <DependentUpon>202108271128580_AddManyToManyBetweenGenreAndVideo.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202108271457004_RemoveManyGenresForMovie.cs" />
+        <Compile Include="Migrations\202108271457004_RemoveManyGenresForMovie.Designer.cs">
+          <DependentUpon>202108271457004_RemoveManyGenresForMovie.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202108271528101_AddedClassification.cs" />
+        <Compile Include="Migrations\202108271528101_AddedClassification.Designer.cs">
+          <DependentUpon>202108271528101_AddedClassification.cs</DependentUpon>
         </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Program.cs" />
@@ -65,6 +83,18 @@
     <ItemGroup>
       <EmbeddedResource Include="Migrations\202108270650572_InitialMigration.resx">
         <DependentUpon>202108270650572_InitialMigration.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202108270907167_AddGenreTable.resx">
+        <DependentUpon>202108270907167_AddGenreTable.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202108271128580_AddManyToManyBetweenGenreAndVideo.resx">
+        <DependentUpon>202108271128580_AddManyToManyBetweenGenreAndVideo.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202108271457004_RemoveManyGenresForMovie.resx">
+        <DependentUpon>202108271457004_RemoveManyGenresForMovie.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202108271528101_AddedClassification.resx">
+        <DependentUpon>202108271528101_AddedClassification.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
