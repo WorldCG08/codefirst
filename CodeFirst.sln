@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{314EEF53-A29B-4A8D-AE98-53D18C1FF822}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vidzy", "Vidzy\Vidzy.csproj", "{5DB080F3-ECE8-4B4D-BDBE-98F9F8A43848}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{314EEF53-A29B-4A8D-AE98-53D18C1FF822}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{314EEF53-A29B-4A8D-AE98-53D18C1FF822}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{314EEF53-A29B-4A8D-AE98-53D18C1FF822}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DB080F3-ECE8-4B4D-BDBE-98F9F8A43848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DB080F3-ECE8-4B4D-BDBE-98F9F8A43848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DB080F3-ECE8-4B4D-BDBE-98F9F8A43848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DB080F3-ECE8-4B4D-BDBE-98F9F8A43848}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
