@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Data.Entity;
 using System.Diagnostics.Tracing;
 
@@ -54,7 +55,13 @@ namespace CodeFirst
         public PlutoContext()
             : base("name=DefaultConnection")
         {
-            
+        }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Course>()
+                .Property(t => t.Description)
+                .IsRequired();
         }
     }
 }
