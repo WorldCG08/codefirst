@@ -1,0 +1,56 @@
+-*-*-*-*-*- Override in DBContext!!!
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Course>()
+                .Property(t => t.Description)
+                .IsRequired();
+        }
+        
+-----  Generic method
+modelBuilder.Entity<Course>()
+
+-----  Override table name
+modelBuilder.Entity<Course>()
+    .ToTable("tbl_Course");
+    
+modelBuilder.Entity<Course>()
+    .ToTable("tbl_Course", "catalog");
+    
+----- Primary key
+    modelBuilder.Entity<Book>()
+    .HasKey(t => t.ISBN);
+
+----- Composite keys
+    modelBuilder.Entity<OrderItem>()
+        .HasKey(t => new {t.OrderId, t.OrderItemId});
+
+----- Column Names
+    modelBuilder.Entity<Course>()
+        .Property(t => t.Name)
+        .HasColumnName("sName");
+       
+---- Column Type 
+    modelBuilder.Entity<Course>()
+        .Property(t => t.Name)
+        .HasColumnType("varchar");
+
+----- Column Order
+    modelBuilder.Entity<Course>()
+            .Property(t => t.Name)
+            .HasColumnOrder(2);
+            
+----- Database Generated Properties
+    modelBuilder.Entity<Book>()
+        .Property(t => t.ISBN)
+        .HasDatabaseGeneratedOption(DatabaseGeneratedOption.None)     # None, Identity, Computed
+    
+----- Nulls
+    modelBuilder.Entity<Course>()
+                .Property(t => t.Name)
+                .Required();
+                
+----- Length of strings
+    modelBuilder.Entity<Course>()
+                .Property(t => t.Name)
+                .HasMaxLength(255);

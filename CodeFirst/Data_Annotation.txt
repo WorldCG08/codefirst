@@ -1,0 +1,55 @@
+----- Table names
+[Table("tbl_Course")]
+[Table("tbl_Course", Schema = "catalog")]
+public class ClassName
+
+----- Column names
+[Column("sName")]
+[Column("sName", TypeName = "varchar")]
+public string Name { get; set;}
+
+
+----- Primary keys and generated properties
+[Key]
+[DatabaseGenerated(DatabaseGeneratedOption.None)]    # None, Identity, Computed
+public string ISBN { get; set;}
+
+
+----- Composite Keys
+[Key]
+[Column(Order = 1)]
+prublic int OrderId {get;set;}
+
+[Key]
+[Column(Order = 2)]
+prublic int OrderItemId {get;set;}
+
+
+----- Nulls
+[Required]
+public string Name {get;set;}
+
+----Length of Strings
+[MaxLength(255)]
+
+----- index
+[Index]
+[Index(IsUnique = true)]
+
+----- Foreign Keys
+public class Course
+{
+    [ForeignKey("Author")]
+    public int AuthorId {getset}
+    
+    public Author Author {getset}
+}
+
+******** OR *******
+public class Course
+{
+    public int AuthorId {getset}
+    
+    [ForeignKey("AuthorId")]
+    public Author Author {getset}
+}
