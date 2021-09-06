@@ -1,0 +1,79 @@
+Type1   ---->    Type2
+
+HasMany()   - if Type1 has many Type2
+HasRequired()  - if Type1 has only 1 object of Type2
+HasOptional()  - if Type1 has 0 or 1 object of Type2
+
+
+Type1   <----    Type2
+
+WithMany()
+WithRequired()
+WithOptional()
+
+
+
+-*-*-*-*-*-*-*-  Example One to Many -*-*-*-*-*-
+
+Author  1    ->    *  Course
+
+modelBuilder
+    .Entity<Author>()
+    .HasMany(a => a.Courses);
+    
+    
+Author  1    <-    *  Course
+
+modelBuilder
+    .Entity<Author>()
+    .HasMany(a => a.Courses)
+    .WithRequired(c => c.Author);
+    
+modelBuilder
+    .Entity<Author>()
+    .HasMany(a => a.Courses)
+    .WithRequired(c => c.Author)
+    .HasForeignKey(c => c.AuthorId);
+    
+
+
+-*-*-*-*-*-*-*-  Example Many to Many -*-*-*-*-*-
+
+Course  *    --    *  Tag
+
+modelBuilder
+    .Entity<Course>()
+    .HasMany(c => c.Tags)
+    .WithMany(t => t.Courses)
+    .Map(m => m.ToTable("CourseTags"));
+    
+
+-*-*-*-*-*-*-*-  Example One to 0..1 -*-*-*-*-*-
+
+modelBuilder
+    .Entity<Course>()
+    .HasOptional(c => c.Caption)
+    .WithRequired(c => c.Course);
+    
+    
+-*-*-*-*-*-*-*-  Example one to one -*-*-*-*-*-
+
+#*Principal (Parent)*#          #*Dependent (Child)*#
+Course   1           -->            1   Cover
+
+
+modelBuilder
+    .Entity<Course>()
+    .HasRequired(c => c.Cover)
+    .WithRequiredPrincipal(c => c.Course);
+    
+    
+
+#*Principal (Parent)*#          #*Dependent (Child)*#
+Course   1           -->            1   Cover
+
+
+modelBuilder
+    .Entity<Cover>()
+    .HasRequired(c => c.Course)
+    .WithRequiredDependent(c => c.Cover);
