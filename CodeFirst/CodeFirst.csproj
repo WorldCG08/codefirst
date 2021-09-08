@@ -50,6 +50,7 @@
     <ItemGroup>
         <Compile Include="Category.cs" />
         <Compile Include="Cover.cs" />
+        <Compile Include="EntityConfigurations\CourseConfiguration.cs" />
         <Compile Include="Migrations\202108251724450_InitialModel.cs" />
         <Compile Include="Migrations\202108251724450_InitialModel.Designer.cs">
           <DependentUpon>202108251724450_InitialModel.cs</DependentUpon>
