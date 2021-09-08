@@ -2,5 +2,7 @@ CodeFirst/obj/*
 CodeFirst/bin/*
 Vidzy/obj/*
 Vidzy/bin/*
+Queries/Queries/bin/*
+Queries/Queries/obj/*
 .vs/*
 .idea/*
