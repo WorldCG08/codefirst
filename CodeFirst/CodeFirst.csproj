@@ -49,6 +49,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Category.cs" />
+        <Compile Include="Cover.cs" />
         <Compile Include="Migrations\202108251724450_InitialModel.cs" />
         <Compile Include="Migrations\202108251724450_InitialModel.Designer.cs">
           <DependentUpon>202108251724450_InitialModel.cs</DependentUpon>
@@ -72,6 +73,10 @@
         <Compile Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs" />
         <Compile Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.Designer.cs">
           <DependentUpon>202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Migrations\202109060923183_InitialMigration.cs" />
+        <Compile Include="Migrations\202109060923183_InitialMigration.Designer.cs">
+          <DependentUpon>202109060923183_InitialMigration.cs</DependentUpon>
         </Compile>
         <Compile Include="Migrations\Configuration.cs" />
         <Compile Include="Program.cs" />
@@ -99,6 +104,9 @@
       </EmbeddedResource>
       <EmbeddedResource Include="Migrations\202108261420014_DeleteDatePublishedColumnFromCoursesTable.resx">
         <DependentUpon>202108261420014_DeleteDatePublishedColumnFromCoursesTable.cs</DependentUpon>
+      </EmbeddedResource>
+      <EmbeddedResource Include="Migrations\202109060923183_InitialMigration.resx">
+        <DependentUpon>202109060923183_InitialMigration.cs</DependentUpon>
       </EmbeddedResource>
     </ItemGroup>
     <ItemGroup>
