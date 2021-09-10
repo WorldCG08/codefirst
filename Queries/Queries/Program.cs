@@ -160,6 +160,14 @@ namespace Queries
             };
 
             context.Courses.Add(courseAdd);
+            
+            
+            // Editing
+            var courseFind = context.Courses.Find(4);
+            courseFind.Name = "New Name";
+            courseFind.AuthorId = 1;
+            
+            
 
             context.SaveChanges();
         }
