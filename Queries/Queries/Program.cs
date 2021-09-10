@@ -131,6 +131,37 @@ namespace Queries
             var authorIds = authorsThree.Select(a => a.Id);
             
             context.Courses.Where(c => authorIds.Contains(c.AuthorId) && c.FullPrice == 0).Load();
+            
+            
+            
+            ///////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////
+            /////////////////////////// ADD | UPDATE | REMOVE /////////////////////////
+            ///////////////////////////////////////////////////////////////////////////
+            ///////////////////////////////////////////////////////////////////////////
+            
+            // Adding
+            var authorsWpf = context.Authors.ToList();
+            var authorWpf = context.Authors.Single(a => a.Id == 1);
+            
+            
+            var courseAdd = new Course
+            {
+                // New author create
+                // Author = new Author {Id = 99999, Name = "Yu M"},
+                // Best way for WPF apps: 
+                // Author = authorWpf,
+                // Get author using foreign key (Best for MVC):
+                AuthorId = 1,
+                Name = "New Course",
+                Description = "New Description",
+                FullPrice = 99.95f,
+                Level = 1,
+            };
+
+            context.Courses.Add(courseAdd);
+
+            context.SaveChanges();
         }
         
         // Rename to Main if need to work
