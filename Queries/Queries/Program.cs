@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Data.Entity;
 
 namespace Queries
 {
@@ -109,6 +110,27 @@ namespace Queries
             var min = context.Courses.Min(c => c.FullPrice);
             var average = context.Courses.Average(c => c.FullPrice);
 
+            // Eager loading
+            var eagerLoading = context.Courses.Include(c => c.Author).ToList();
+            
+            // Multiple levels ?
+            //context.Courses.Include(a => a.Tags.Select(t => t.Moderator));
+            
+            // Explicit loading
+
+            var authorExplicit = context.Authors.Single(a => a.Id == 1);
+            
+            // MSDN way - not so good
+            context.Entry(authorExplicit).Collection(a => a.Courses).Query().Where(c => c.FullPrice == 0).Load();
+            // Best way
+            context.Courses.Where(c => c.AuthorId == authorExplicit.Id && c.FullPrice == 0).Load();
+            
+            // Get three courses
+            var authorsThree = context.Authors.ToList();
+
+            var authorIds = authorsThree.Select(a => a.Id);
+            
+            context.Courses.Where(c => authorIds.Contains(c.AuthorId) && c.FullPrice == 0).Load();
         }
         
         // Rename to Main if need to work
