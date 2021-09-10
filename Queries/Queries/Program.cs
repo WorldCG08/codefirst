@@ -168,7 +168,15 @@ namespace Queries
             courseFind.AuthorId = 1;
             
             
-
+            // Removing without cascade
+            var courseDelete = context.Courses.Find(6);
+            context.Courses.Remove(courseDelete);
+            
+            // Removing with cascade (Explicitly delete courses then author)
+            var authorCascadeDelete = context.Authors.Include(a => a.Courses).Single(a => a.Id == 2);
+            context.Courses.RemoveRange(authorCascadeDelete.Courses);
+            context.Authors.Remove(authorCascadeDelete);
+            
             context.SaveChanges();
         }
         
